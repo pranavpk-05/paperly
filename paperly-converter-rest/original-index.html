@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paperly — A little less paperwork.</title>
+  <meta name="description" content="Turn your images into a beautiful PDF. Arrange, rotate, and customize pages — free, private, and right in your browser.">
+  <meta name="theme-color" content="#7761d9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='14' fill='%237761d9'/%3E%3Cpath d='M15 12h14l6 6v18H15z' fill='white'/%3E%3Cpath d='m20 26 4 4 7-9' fill='none' stroke='%237761d9' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./assets/pdf-lib.min.js" defer></script><script src="./app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8m-8 4h5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 16v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m21 15-5-5L5 21"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 8M3 4v6h6"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+    <symbol id="i-grip" viewBox="0 0 24 24"><path d="M9 5h.01M15 5h.01M9 12h.01M15 12h.01M9 19h.01M15 19h.01" stroke-width="3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5zM20 2v4m-2-2h4"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+  </defs></svg>
+  <header class="site-header"><div class="nav-wrap">
+    <a class="brand" href="./" aria-label="Paperly home"><span class="brand-icon"><svg><use href="#i-file"/></svg></span>paperly<span class="brand-dot">.</span></a>
+    <nav aria-label="Main navigation"><a href="#converter" class="nav-active">Image to PDF</a><button id="how-button">How it works <span>↗</span></button></nav>
+    <span class="header-note"><span class="status-dot"></span> Little tool. Big possibilities.</span>
+  </div></header>
+  <main>
+    <section class="intro">
+      <div class="eyebrow"><svg><use href="#i-spark"/></svg> LESS FRICTION. MORE CREATION.</div>
+      <h1>Your images.<br class="mobile-break"> One lovely <span>PDF.<svg viewBox="0 0 190 13" aria-hidden="true"><path d="M3 9C60 1 125 1 186 7"/></svg></span></h1>
+      <p>From scattered snapshots to perfectly put together.<br>Drop your images, make it yours, and you’re done.</p>
+      <div class="intro-tags"><span><svg><use href="#i-check"/></svg> Free to use</span><span><svg><use href="#i-check"/></svg> No sign-up</span><span><svg><use href="#i-lock"/></svg> 100% on your device</span></div>
+    </section>
+    <section id="converter" class="converter" aria-label="Image to PDF workspace">
+      <div class="workspace">
+        <div class="workspace-top"><div><span class="step-number">01</span><h2>Your images <span id="file-count" class="count" hidden>0</span></h2></div><button class="text-button" id="clear-button" hidden><svg><use href="#i-trash"/></svg> Clear all</button><span id="ready-label" class="ready-label">Let’s start with the good stuff</span></div>
+        <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" multiple hidden>
+        <div id="drop-zone" class="drop-zone">
+          <div class="empty-state" id="empty-state">
+            <div class="art-stack" aria-hidden="true"><div class="art-card art-back"><img src="./assets/forest.jpg" alt=""></div><div class="art-card art-middle"><img src="./assets/lake.jpg" alt=""></div><div class="art-card art-front"><img src="./assets/mountains.jpg" alt=""><span><svg><use href="#i-image"/></svg> A little adventure</span></div><span class="art-spark">✳</span><span class="art-plus">+</span></div>
+            <h3>A home for all your images</h3><p>Drag & drop them here, or pick a few to get started.</p>
+            <button id="choose-button" class="primary-button"><svg><use href="#i-plus"/></svg> Choose images</button>
+            <span class="format-note">JPG, PNG, WEBP · Up to 20 MB each · 50 images</span>
+          </div>
+          <div id="image-grid" class="image-grid" hidden></div>
+          <div class="drop-overlay"><svg><use href="#i-upload"/></svg><strong>Drop something wonderful</strong></div>
+        </div>
+        <div class="workspace-bottom"><span><svg><use href="#i-grip"/></svg><span id="arrange-note">Your images, in exactly your order.</span></span><button id="sample-button" class="text-button">Try with sample images <svg><use href="#i-arrow"/></svg></button><button id="add-button" class="text-button" hidden><svg><use href="#i-plus"/></svg> Add images</button></div>
+        <div class="privacy-note"><span class="privacy-icon"><svg><use href="#i-lock"/></svg></span><div><strong>Your files stay yours.</strong><p>Everything happens in your browser. Your images never leave your device.</p></div></div>
+      </div>
+      <aside class="settings" aria-label="PDF settings">
+        <div class="settings-title"><span class="step-number">02</span><h2>Make it yours</h2><svg><use href="#i-spark"/></svg></div>
+        <label class="field-label" for="page-size">Page size <span class="recommended">THE CLASSIC</span></label>
+        <div class="select-wrap"><select id="page-size"><option value="a4">A4</option><option value="letter">US Letter</option><option value="original">Fit to image</option></select><span id="page-dimensions">210 × 297 mm</span></div>
+        <fieldset><legend class="field-label">Orientation</legend><div class="segmented orientation-group"><button type="button" class="selected" data-orientation="auto" aria-pressed="true"><svg><use href="#i-spark"/></svg> Auto</button><button type="button" data-orientation="portrait" aria-pressed="false"><span class="page-glyph"></span> Portrait</button><button type="button" data-orientation="landscape" aria-pressed="false"><span class="page-glyph landscape"></span> Landscape</button></div></fieldset>
+        <fieldset><legend class="field-label">Page margins</legend><div class="margin-options"><button type="button" data-margin="0" aria-pressed="false"><span class="margin-icon none"></span>None</button><button type="button" class="selected" data-margin="24" aria-pressed="true"><span class="margin-icon small"></span>Small</button><button type="button" data-margin="48" aria-pressed="false"><span class="margin-icon large"></span>Large</button></div></fieldset>
+        <div class="quality-row"><div><label class="field-label" for="quality">Keep it crisp</label><p>High-quality images in every page</p></div><label class="toggle"><input id="quality" type="checkbox" checked><span></span></label></div>
+        <div class="filename-field"><label class="field-label" for="filename">File name</label><div class="filename-input"><svg><use href="#i-file"/></svg><input id="filename" value="my-lovely-images" maxlength="100" aria-label="PDF file name"><span>.pdf</span></div></div>
+        <div class="export-section"><div class="export-summary"><span id="page-summary">Your next great PDF</span><span id="size-summary">Ready when you are</span></div><button class="primary-button convert-button" id="convert-button" disabled><svg><use href="#i-file"/></svg><span>Create PDF</span><svg><use href="#i-arrow"/></svg></button><button id="preview-button" class="preview-button" disabled><svg><use href="#i-eye"/></svg> Preview before you download</button><p class="export-note">A little click. A perfectly packaged PDF.</p></div>
+      </aside>
+    </section>
+    <section class="benefits" aria-label="Why Paperly"><div><span class="benefit-icon lilac"><svg><use href="#i-spark"/></svg></span><div><h3>Simple by design</h3><p>No learning curve. Just lovely PDFs.</p></div></div><div><span class="benefit-icon peach"><svg><use href="#i-image"/></svg></span><div><h3>A place for every picture</h3><p>Photos, scans, notes — bring them all.</p></div></div><div><span class="benefit-icon mint"><svg><use href="#i-lock"/></svg></span><div><h3>Private, always</h3><p>On your device. Under your control.</p></div></div></section>
+  </main>
+  <footer><a class="footer-brand" href="./">paperly.</a><span>A little less paperwork. A little more possibility.</span><span>Made for the everyday <span class="heart">♡</span></span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="help-dialog"><div class="dialog-top"><span class="eyebrow">SMALL STEPS. LOVELY RESULTS.</span><button data-close class="icon-button" aria-label="Close help"><svg><use href="#i-close"/></svg></button></div><h2>From pictures to pages.</h2><ol class="help-steps"><li><strong>Bring your images.</strong><p>Choose JPG, PNG, or WebP files, or drop them into the workspace.</p></li><li><strong>Make it feel right.</strong><p>Drag to reorder, rotate a photo, and choose your page size, orientation, and margins. Arrow buttons also let you reorder with a keyboard.</p></li><li><strong>Give it a little click.</strong><p>Preview the actual PDF, then create and download it. Each image gets its own page.</p></li></ol><div class="help-privacy"><svg><use href="#i-lock"/></svg> All conversion happens locally. No uploads, accounts, or watermarks.</div></dialog>
+  <dialog id="preview-dialog" class="preview-dialog"><div class="dialog-top"><div><h2>Your PDF, a little closer.</h2><p id="preview-details"></p></div><button data-close class="icon-button" aria-label="Close preview"><svg><use href="#i-close"/></svg></button></div><iframe id="pdf-preview" title="Generated PDF preview"></iframe><div class="preview-bottom"><span>Looking good? Make it official.</span><button id="preview-download" class="primary-button"><svg><use href="#i-download"/></svg> Download PDF</button></div></dialog>
+</body>
+</html>

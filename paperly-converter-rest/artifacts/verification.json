@@ -1,0 +1,18 @@
+{
+  "passed": [
+    "Initial UI, locally served images, disabled empty export",
+    "Help dialog and keyboard dismissal",
+    "Sample images load into the actual conversion queue",
+    "Both keyboard buttons and drag-and-drop reorder pages",
+    "Rotation, actual generated PDF preview, and automatic page orientation",
+    "Preview download produces a parseable three-page PDF",
+    "US Letter landscape, large margins, compressed mode, custom name and valid PDF download",
+    "Remove image and clear workspace",
+    "Unsupported files are rejected with a visible explanation",
+    "PNG and WebP upload, image-sized pages, and zero margins",
+    "Dropping a local JPG adds it to the workspace",
+    "Mobile layout has no horizontal overflow",
+    "No browser JavaScript errors across the full journey"
+  ],
+  "browserErrors": []
+}

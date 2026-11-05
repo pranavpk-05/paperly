@@ -1,0 +1,30 @@
+Paperly PDF Workspace
+
+Fabric.js 7.4.0 — MIT. Copyright Fabric.js contributors.
+See assets/engines/fabric.LICENSE. https://github.com/fabricjs/fabric.js
+
+pdf-lib 1.17.1 — MIT. Copyright Andrew Dillon.
+See assets/pdf-lib.LICENSE. https://github.com/Hopding/pdf-lib
+
+PDF.js 6.4.299 — Apache-2.0. Mozilla and contributors.
+See assets/engines/pdfjs.LICENSE. https://github.com/mozilla/pdf.js
+
+JSZip 3.10.1 — MIT or GPLv3 (used under MIT).
+See assets/engines/jszip.LICENSE. https://github.com/Stuk/jszip
+
+PptxGenJS 4.0.1 — MIT. Copyright Brent Ely.
+See assets/engines/pptxgen.LICENSE. https://github.com/gitbrent/PptxGenJS
+
+Tesseract.js 7.0.0 — Apache-2.0.
+See assets/engines/tesseract.LICENSE. https://github.com/naptha/tesseract.js
+Its worker, WASM core, and English language model download on first use.
+
+QPDF — Apache-2.0. See assets/engines/qpdf.LICENSE.
+https://github.com/qpdf/qpdf
+@neslinesli93/qpdf-wasm 0.3.0 wrapper — npm license declaration: ISC.
+https://github.com/neslinesli93/qpdf-wasm
+
+Fonts: DM Sans and Manrope, via Google Fonts, under SIL Open Font License.
+Sample photography is from Unsplash. Sample assets are in assets/.
+
+Paperly is independently built and is not affiliated with iLovePDF.

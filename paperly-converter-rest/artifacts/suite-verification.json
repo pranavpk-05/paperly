@@ -1,0 +1,27 @@
+{
+  "base": "http://127.0.0.1:4178",
+  "passed": [
+    "36-tool directory, search, filters, and favorites",
+    "Merge output parses with all four input pages",
+    "Custom split ranges produce independent PDFs",
+    "Extraction order, page removal, duplication, and per-page rotation",
+    "Selected rotation, page numbering, and embedded watermark text",
+    "Real AES-256 protection rejects missing password; correct-password unlock restores editable PDF",
+    "QPDF repair and lossless compression preserve readable content",
+    "Raster compression, grayscale conversion, and selected-page PNG export",
+    "Redaction visibly blacks out target area and removes recoverable original text",
+    "Crop boundaries, resized page dimensions, and metadata values",
+    "Text and shape editing, form creation, filling, and flattening",
+    "Plain text, Markdown, and side-by-side text comparison report",
+    "Real DOCX and XLSX outputs plus text/value conversions back to PDF",
+    "Image-based PowerPoint export, PPTX text handout import, and inert HTML text conversion",
+    "Image conversion, grayscale scans, visual signature, and combined workflow",
+    "Invalid page ranges, removal of every page, and mismatched passwords are rejected",
+    "On-device OCR produces searchable PDF text",
+    "Real workspace export, browser download, and handoff to another tool",
+    "Visual page organizer duplicates, reorders, and exports",
+    "Mobile directory and workspace have no horizontal overflow",
+    "No uncaught browser JavaScript errors"
+  ],
+  "browserErrors": []
+}

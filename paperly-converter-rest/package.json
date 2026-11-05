@@ -1,0 +1,16 @@
+{
+  "name": "paperly-image-to-pdf",
+  "version": "2.1.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "test": "node verify-suite.mjs",
+    "test:images": "node verify.mjs",
+    "test:editor": "node verify-editor.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
+}

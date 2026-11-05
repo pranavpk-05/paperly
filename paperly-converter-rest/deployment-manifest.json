@@ -1,0 +1,167 @@
+[
+  {
+    "file": "app.js",
+    "sha": "e8f410194e3ac002bc81200c9301f3da1f6a5960",
+    "size": 15435
+  },
+  {
+    "file": "assets/editor-mark.svg",
+    "sha": "832c33854208130b6bd50a353a6fa6e7ac4afe61",
+    "size": 237
+  },
+  {
+    "file": "assets/engines/fabric.LICENSE",
+    "sha": "b1901aa389f8d00b4d2d7fc1a48852791af7dbd2",
+    "size": 1243
+  },
+  {
+    "file": "assets/engines/fabric.min.js",
+    "sha": "cd65b1c6007e448988923d63c72db9350fcdc9e0",
+    "size": 299013
+  },
+  {
+    "file": "assets/engines/jszip.LICENSE",
+    "sha": "2cd43d380887fab055c49d5dab12df1995d9ed22",
+    "size": 33753
+  },
+  {
+    "file": "assets/engines/jszip.min.js",
+    "sha": "c96375d50e72b199aa54de7b9ad908fd5a2dc7bc",
+    "size": 97630
+  },
+  {
+    "file": "assets/engines/pdf.mjs",
+    "sha": "aad91cd3b575f3a1afd7fcde1e94670e8b88f73a",
+    "size": 860818
+  },
+  {
+    "file": "assets/engines/pdf.worker.mjs",
+    "sha": "0f1e52a2538d228502496a8c9525263341cc83d3",
+    "size": 2229713
+  },
+  {
+    "file": "assets/engines/pdfjs.LICENSE",
+    "sha": "598f87f072f66e2269dd6919292b2934dbb20492",
+    "size": 10174
+  },
+  {
+    "file": "assets/engines/pptxgen.bundle.js",
+    "sha": "8b9b814f53e22bc55a7897f41a9e44b3613b6304",
+    "size": 460889
+  },
+  {
+    "file": "assets/engines/pptxgen.LICENSE",
+    "sha": "78767f2e8ebaea966d801cffc8246a3277bc756c",
+    "size": 1081
+  },
+  {
+    "file": "assets/engines/qpdf-worker.js",
+    "sha": "5eeb0b06a65d99b54389c8c3869e1434d5b80519",
+    "size": 1337
+  },
+  {
+    "file": "assets/engines/qpdf.js",
+    "sha": "943739f17ebe96352f1ea33c3f417a61aaee29b7",
+    "size": 43376
+  },
+  {
+    "file": "assets/engines/qpdf.LICENSE",
+    "sha": "2b8b815229aa8a61e483fb4ba0588b8b6c491890",
+    "size": 11358
+  },
+  {
+    "file": "assets/engines/qpdf.wasm",
+    "sha": "01332c3829795bdfc39943c72017a9c3458f8b6e",
+    "size": 1334286
+  },
+  {
+    "file": "assets/engines/tesseract.LICENSE",
+    "sha": "92170cdc034b2ff819323ff670d3b7266c8bffcd",
+    "size": 11357
+  },
+  {
+    "file": "assets/engines/tesseract.min.js",
+    "sha": "11c1561c020d63683436d257afcf1cede180bde5",
+    "size": 62961
+  },
+  {
+    "file": "assets/forest.jpg",
+    "sha": "de5df638df4e81e5b1e553c3149c8f23a2bb2513",
+    "size": 197029
+  },
+  {
+    "file": "assets/lake.jpg",
+    "sha": "600472a80ecb14e5cc6e7a70e780dc972d548ffe",
+    "size": 140727
+  },
+  {
+    "file": "assets/mountains.jpg",
+    "sha": "bbc31321735eb489262ea8a86e6464a0da667c34",
+    "size": 161710
+  },
+  {
+    "file": "assets/pdf-lib.LICENSE",
+    "sha": "5fb59d0a562bb91891e87212ffec88e9759059c7",
+    "size": 1070
+  },
+  {
+    "file": "assets/pdf-lib.min.js",
+    "sha": "0fe9d5550429eb0e28f6ae56d672972d2911fb58",
+    "size": 525099
+  },
+  {
+    "file": "editor/editor.css",
+    "sha": "fff61ce5ff18ff03925758e9ec36d84f509e7753",
+    "size": 16181
+  },
+  {
+    "file": "editor/editor.js",
+    "sha": "c20a874862b0e82b2001e5d4664c79b7af82141d",
+    "size": 34623
+  },
+  {
+    "file": "editor/index.html",
+    "sha": "78d87a36fa8e2cf6c83dca344f65af4c6d5a34dc",
+    "size": 12904
+  },
+  {
+    "file": "image-to-pdf/index.html",
+    "sha": "b02b91e5ed7bf2003445d11d37988eb015574f49",
+    "size": 10911
+  },
+  {
+    "file": "index.html",
+    "sha": "11831ea1efb0f87b2cd6c6c9f7b387f6ab06550c",
+    "size": 10592
+  },
+  {
+    "file": "style.css",
+    "sha": "b86d2c5c833a8be1c0c7d6d4762a893a0e2055ac",
+    "size": 18724
+  },
+  {
+    "file": "suite.css",
+    "sha": "a102db9e802f0453b55e4292c65c4d008ee3f844",
+    "size": 28768
+  },
+  {
+    "file": "suite.js",
+    "sha": "720e9cbc797a988da6f655fdb06dbb01e38b6e81",
+    "size": 39549
+  },
+  {
+    "file": "THIRD-PARTY-NOTICES.txt",
+    "sha": "c28acbe7b82c3b82dbd997eb68e7ee51e1239b5d",
+    "size": 1224
+  },
+  {
+    "file": "tools/catalog.js",
+    "sha": "0246bda70b066d4882b75ed4134352868794d23c",
+    "size": 9296
+  },
+  {
+    "file": "tools/engine.js",
+    "sha": "882b22723a7c4c819b149b406d1e69995ba8c48f",
+    "size": 33854
+  }
+]

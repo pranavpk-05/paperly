@@ -1,0 +1,21 @@
+{
+  "base": "http://127.0.0.1:4178",
+  "passed": [
+    "Toolkit opens the fully initialized visual document editor",
+    "Member-card text, typography, and exact positioning are editable",
+    "Duplicate, delete, undo, and redo preserve canvas state",
+    "New text and layer ordering work",
+    "Photos can be added and replaced while preserving their bounds",
+    "Cover areas can be placed and resized",
+    "PNG export retains card dimensions and includes added photo pixels",
+    "Card PDF export is valid and preserves card dimensions",
+    "Native PDF text is detected, selected, and replaced visually",
+    "Original text can be restored and edits persist across page navigation",
+    "Multi-page export is flattened and retains no recoverable original PDF text",
+    "OCR detects editable text in a scanned card image",
+    "Scan recognition can be canceled without blocking the editor",
+    "Editor works on mobile without horizontal page overflow",
+    "No uncaught browser JavaScript errors"
+  ],
+  "browserErrors": []
+}

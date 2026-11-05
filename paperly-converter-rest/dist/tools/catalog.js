@@ -1,0 +1,68 @@
+export const tools = [
+  ['merge','Merge PDF','Bring multiple PDFs together, in exactly your order.','Organize','merge','coral','pdf','Combine PDFs',true],
+  ['split','Split PDF','Separate a document into pages or custom ranges.','Organize','split','amber','pdf','Split PDF'],
+  ['compress','Compress PDF','Make room for more with smaller, lighter documents.','Optimize','compress','green','pdf','Compress PDF'],
+  ['pdf-word','PDF to Word','Extract selectable text into an editable DOCX document.','Convert','word','blue','pdf','Convert to Word'],
+  ['pdf-powerpoint','PDF to PowerPoint','Turn each page into a picture-perfect presentation slide.','Convert','slides','orange','pdf','Create PowerPoint'],
+  ['pdf-excel','PDF to Excel','Take text rows out of your PDF and into a spreadsheet.','Convert','table','green','pdf','Create spreadsheet'],
+  ['word-pdf','Word to PDF','Turn the text in a DOCX document into a clean PDF.','Convert','word','blue','docx','Convert to PDF'],
+  ['powerpoint-pdf','PowerPoint to PDF','Convert PPTX slide text into a readable PDF handout.','Convert','slides','orange','pptx','Convert to PDF'],
+  ['excel-pdf','Excel to PDF','Put your XLSX worksheets and CSV tables on the page.','Convert','table','green','sheet','Convert to PDF'],
+  ['edit','Edit document','Visually edit PDF text, images, photos, and card-sized layouts.','Edit','edit','purple','pdf','Save edited PDF'],
+  ['pdf-jpg','PDF to images','Save PDF pages as sharp JPG or transparent-free PNG images.','Convert','image','amber','pdf','Export images'],
+  ['image-pdf','Images to PDF','Photos, scans, and screenshots. One lovely PDF.','Convert','image','amber','image','Create PDF',true],
+  ['sign','Sign PDF','Draw your signature and put it right where it belongs.','Security','sign','purple','pdf','Sign PDF'],
+  ['watermark','Watermark PDF','Add your name, a label, or a little extra ownership.','Edit','stamp','purple','pdf','Add watermark'],
+  ['rotate','Rotate PDF','Get every page facing the right direction.','Edit','rotate','purple','pdf','Rotate PDF'],
+  ['html-pdf','HTML to PDF','Convert the readable text in an HTML file into a PDF.','Convert','code','blue','html','Convert to PDF'],
+  ['unlock','Unlock PDF','Remove password protection using the password you know.','Security','unlock','pink','pdf','Unlock PDF'],
+  ['protect','Protect PDF','Keep your documents private with AES-256 encryption.','Security','lock','pink','pdf','Protect PDF'],
+  ['organize','Organize PDF','Reorder, duplicate, rotate, and remove pages visually.','Organize','grid','coral','pdf','Save arrangement'],
+  ['repair','Repair PDF','Try to rebuild a damaged PDF’s structure with QPDF.','Optimize','repair','green','pdf','Repair PDF'],
+  ['numbers','Page numbers','A place for every page, and a number for every place.','Edit','numbers','purple','pdf','Add page numbers'],
+  ['scan','Scan to PDF','Use your phone’s camera or add scans from your device.','Convert','scan','amber','image','Create scanned PDF',true],
+  ['ocr','OCR PDF','Make English scans searchable with on-device recognition.','Optimize','scan','green','pdf','Recognize text'],
+  ['compare','Compare PDF','See selectable-text differences in a side-by-side report.','Security','compare','pink','pdf','Compare documents',true],
+  ['redact','Redact PDF','Permanently remove an area by rebuilding the page as an image.','Security','redact','pink','pdf','Redact permanently'],
+  ['crop','Crop PDF','Trim the edges and give your pages a little breathing room.','Edit','crop','purple','pdf','Crop PDF'],
+  ['forms','PDF forms','Fill existing form fields or add text fields and checkboxes.','Edit','forms','purple','pdf','Save form'],
+  ['remove','Remove pages','Leave out the pages your document no longer needs.','Organize','remove','coral','pdf','Remove pages'],
+  ['extract','Extract pages','Keep just the pages you need in a new PDF.','Organize','extract','coral','pdf','Extract pages'],
+  ['markdown','PDF to Markdown','Take selectable text into your notes, docs, or next idea.','Convert','code','blue','pdf','Export Markdown'],
+  ['text','PDF to text','Get the words out in a simple, editable text file.','Convert','text','blue','pdf','Extract text'],
+  ['grayscale','Grayscale PDF','Turn colorful pages into clean black-and-white documents.','Optimize','contrast','green','pdf','Make grayscale'],
+  ['flatten','Flatten forms','Keep filled form values fixed in the final document.','Edit','layers','purple','pdf','Flatten form fields'],
+  ['resize','Resize PDF','Fit your pages to A4, Letter, or custom dimensions.','Edit','resize','purple','pdf','Resize pages'],
+  ['metadata','PDF metadata','Update the title, author, subject, and keywords.','Security','info','pink','pdf','Save metadata'],
+  ['workflow','Create a workflow','Merge, rotate, number, and watermark in one go.','Organize','workflow','coral','pdf','Run workflow',true]
+].map(([id,title,description,category,icon,color,input,action,multiple=false])=>({id,title,description,category,icon,color,input,action,multiple}));
+
+export const limits = {
+  'pdf-word':'Selectable text is exported in reading order. Page layout, graphics, and complex tables are not preserved. Scanned PDFs need OCR first.',
+  'pdf-excel':'Text items are grouped into rows using their page position. This is not a financial-table recognition engine; review the resulting cells. Scans need OCR first.',
+  'pdf-powerpoint':'Each page becomes an image-based slide. The appearance is preserved, but slide text is not separately editable.',
+  'word-pdf':'DOCX text conversion. The document is reflowed into clean pages; original fonts, images, tables, headers, and layout are not preserved. Legacy .doc files need a server converter.',
+  'powerpoint-pdf':'PPTX text handout conversion. Slide text is preserved in reading order; themes, positioning, animations, and images are not reproduced. Legacy .ppt files need a server converter.',
+  'excel-pdf':'Reads XLSX cell values or CSV data. It does not calculate formulas; cached formula results are used. Original formatting, charts, and workbook print layouts are not preserved.',
+  'html-pdf':'Reads text from a local HTML file. Scripts are never executed. CSS, images, and webpage URL capture require a rendering server.',
+  compress:'Lossless mode preserves text and graphics but may save little space. Smaller and smallest modes rebuild pages as images, removing selectable text, forms, links, and existing signatures. Already optimized files may not shrink.',
+  ocr:'English OCR runs locally using Tesseract. The recognition engine and language model download on first use. Searchable PDF output contains recognized text plus the page image; accuracy varies. Existing interactive content is flattened.',
+  sign:'Adds a visual handwritten signature. This is not a certificate-based digital signature, identity verification, or a request-for-signature service.',
+  redact:'Pages are rebuilt as images so covered content cannot be recovered from the result. Selectable text, links, forms, and existing signatures are removed. The same relative area is applied to the pages you select.',
+  crop:'Cropping changes the visible page boundary. Content outside that boundary remains in the PDF. Use Redact PDF when information must be permanently removed.',
+  compare:'Compares selectable text, not page artwork or visual appearance. A two-column HTML report highlights added and removed text. OCR scanned pages first.',
+  repair:'Recovery is best effort. Missing document content cannot be reconstructed, and some damaged PDFs cannot be recovered.',
+  unlock:'You must provide the correct document password. This tool does not recover or guess forgotten passwords.',
+  edit:'This quick editor adds content using coordinates. For click-to-edit text replacement, images, layers, and card layouts, open the visual document editor using the link in the settings panel. Visual editor exports are flattened.',
+  flatten:'Flattens interactive AcroForm fields. It does not flatten every annotation type or convert XFA forms.',
+  forms:'Standard AcroForm fields only. XFA forms, automatic field detection, and digital-signature fields are not supported.',
+  markdown:'Exports selectable text with page headings and line breaks. Complex tables, images, and semantic document structure are not reconstructed.'
+};
+export const accepts = {pdf:'.pdf,application/pdf',image:'image/jpeg,image/png,image/webp',docx:'.docx',pptx:'.pptx',sheet:'.xlsx,.csv',html:'.html,.htm'};
+export const formatLabels = {pdf:'PDF documents',image:'JPG, PNG & WebP images',docx:'DOCX documents',pptx:'PPTX presentations',sheet:'XLSX workbooks & CSV files',html:'HTML files'};
+export const unavailable = [
+  ['PDF to PDF/A','Certified archival conversion needs a compliant conversion engine and validation server.'],
+  ['AI summarize & translate','These tools need an AI model or API connection. No AI service is configured.'],
+  ['Full-fidelity Office conversion','Faithful layout conversion for DOC, DOCX, PPT, PPTX, XLS, and XLSX needs a server with LibreOffice or a conversion API. The local converters preserve text and values.'],
+  ['Signature requests & certificates','Multi-party signature workflows and cryptographic certificate signing need identity, secure storage, and a signing service.']
+];
